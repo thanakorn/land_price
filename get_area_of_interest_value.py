@@ -36,5 +36,5 @@ for area in unique_areas:
 
 output = pd.DataFrame(output, columns=['Area', 'MarketValue'])
 
-os.mkdir('output')
+if not os.path.exists('./output'): os.mkdir('output')
 output.to_csv('./output/area_value.csv', index=False)
