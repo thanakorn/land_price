@@ -25,7 +25,7 @@ For simplicity, the code performs computation for each area sequentially. Howeve
 
 ## Running on production
 
-The script is self-contained so it can be run anywhere as long as the dependency(pandas) is satisfied. Also, the input files can be configured at runtime
+The script is self-contained so it can be run anywhere as long as the dependency(pandas) is satisfied. Once the process responsible for downloading the data finish, it should trigger the script and provide the input file names.
 
 ## How to scale 
 If the data is much larger, we can use concurrent computing to accelerate the computation. 
