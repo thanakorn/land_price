@@ -1,9 +1,14 @@
 import pandas as pd
+import argparse
 import os
 
-area_interest = pd.read_csv('./data/areas_of_interest.csv')
+argument_parser = argparse.ArgumentParser()
+argument_parser.add_argument('--land_data')
+argument_parser.add_argument('--area_of_interest')
+args = argument_parser.parse_args()
 
-land_price = pd.read_csv('./data/pp-2020.csv')
+area_interest = pd.read_csv(f'./{args.area_of_interest}')
+land_price = pd.read_csv(f'./{args.land_data}')
 land_price.columns = ['TransactionID', 'Price', 'Date', 'Postcode', 'PropertyType', 'NewlyBuilt', 'Duration', 'PAON', 'SAON', 'Street', 'Locality', 'City', 'District', 'County', 'PPD', 'RecordStatus']
 # Remove unused columns
 land_price = land_price[['TransactionID', 'Price', 'Postcode', 'District']]
