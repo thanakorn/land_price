@@ -25,4 +25,9 @@ For simplicity, the code performs computation for each area sequentially. Howeve
 
 ## Running on production
 
-## How to scale
+The script is self-contained so it can be run anywhere as long as the dependency(pandas) is satisfied. Also, the input files can be configured at runtime
+
+## How to scale 
+If the data is much larger, we can use concurrent computing to accelerate the computation. 
+
+For example, we can create multiple processes where each has a set of areas it is responsible and a portion of land_data corresponding to that. Each process will write the result into its own file. If we want the result as a single file, we can write a script to concatenate all files together which should be straightforward as they all are CSV and have the same headers.
