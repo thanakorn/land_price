@@ -14,6 +14,10 @@ python get_area_of_interest_value.py --land_data=data/pp-2020.csv --area_of_inte
 ```
 
 ## Tradoffs
+- Reading the whole file
+The two input files are read into the memory all at once. This may not be feasible in case of the huge file.
+- Sequential computation
+For simplicity, the code performs computation for each area sequentially. However, the computation for each area is independent. Multithreading or Multiprocessing can be used to accelerate the computation
 
 ## Running on production
 
